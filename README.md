@@ -37,8 +37,8 @@
     ```
     * install yaml을 다운로드한다.
     ```bash
-    $ git clone https://github.com/tmax-cloud/hypercloud-install-guide.git
-    $ cd olm-install/OLM/yaml
+    $ wget -O hypercloud-install.tar.gz https://github.com/tmax-cloud/hypercloud-install-guide/archive/v${INSTALL_GUIDE_VERSION}.tar.gz
+    $ cd OLM/manifest
     ```
   
 2. 위의 과정에서 생성한 tar 파일들을 폐쇄망 환경으로 이동시킨 뒤 사용하려는 registry에 이미지를 push한다.
