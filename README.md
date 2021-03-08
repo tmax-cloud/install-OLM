@@ -24,6 +24,7 @@
     $ export OLM_VERSION=0.15.1
     $ export CFM_VERSION=v1.13.3
     $ export REG_VERSION=latest
+    $ export REGISTRY= XXX.XXX.XXX.XXX:XXXX (e.g.192.168.6.100:5000)
     $ cd $OLM_HOME
     ```
     * 외부 네트워크 통신이 가능한 환경에서 필요한 이미지를 다운받는다.
