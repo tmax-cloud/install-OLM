@@ -68,7 +68,7 @@
     
     $ sed -i 's/{registry}/'${REGISTRY}'/g' catalog_build.sh
     
-    $ sed -i 's/{registry}/'${REGISTRY}'/g' prom_0.22/prometheusoperator.0.22.2.clusterserviceversion.yaml
+    $ sed -i 's/{registry}/'${REGISTRY}'/g' akka_1.0.0/akka-cluster-operator.v1.0.0.clusterserviceversion.yaml 
     
     $ sh catalog_build.sh
     ```
