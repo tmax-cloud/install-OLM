@@ -61,7 +61,7 @@
     $ sudo docker push ${REGISTRY}/operator-framework/upstream-community-operators:${REG_VERSION}
     ```
     
-3. 설치할 Operator 이미지를 폐쇄망에서 다운받기 위해 Custom Registry를 빌드한다. (e.g. Prometheus Operator 0.22) 
+3. 설치할 Operator 이미지를 폐쇄망에서 다운받기 위해 Custom Registry를 빌드한다. (e.g. Akka Cluster Operator 1.0.0) 
     ```bash
     $ cd private
     
@@ -69,7 +69,7 @@
     
     $ sed -i 's/{registry}/'${REGISTRY}'/g' catalog_build.sh
     
-    $ sed -i 's/{registry}/'${REGISTRY}'/g' akka_1.0.0/akka-cluster-operator.v1.0.0.clusterserviceversion.yaml 
+    $ sed -i 's/{registry}/'${REGISTRY}'/g' akka_1.0.0/akka-cluster-operator.v1.0.0.clusterserviceversion.yaml
     
     $ sh catalog_build.sh
     ```
@@ -80,6 +80,14 @@
     
     $ kubectl apply -f custom_catalogsource.yaml
     ```
+    
+5. Custom Registry에서 관리하는 Operator의 Container Image를 미러링한다.
+    ```bash
+    $ sed -i 's/{registry}/'${REGISTRY}'/g' akka_image.sh
+    
+    $ sh akka_image.sh
+    ```    
+    
 
 ## Install Steps
 0. [olm yaml 수정](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-0-hypercloud-webhook-yaml-%EC%88%98%EC%A0%95)
