@@ -131,9 +131,9 @@
   
   
 ## 삭제 가이드
-1. [사용중인 리소스 제거](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-0-hypercloud-webhook-yaml-%EC%88%98%EC%A0%95)
-2. [설치 리소스 제거](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-1-%EC%9D%B8%EC%A6%9D%EC%84%9C-%EC%83%9D%EC%84%B1)
-3. [CRD 제거](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-2-secret-%EC%83%9D%EC%84%B1)
+1. [사용중인 리소스 제거](https://github.com/tmax-cloud/install-OLM/blob/main/README.md#step-1-%EC%82%AC%EC%9A%A9%EC%A4%91%EC%9D%B8-%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%A0%9C%EA%B1%B0)
+2. [설치 리소스 제거](https://github.com/tmax-cloud/install-OLM/blob/main/README.md#step-2-%EC%84%A4%EC%B9%98-%EC%A0%9C%EA%B1%B0)
+3. [CRD 제거](https://github.com/tmax-cloud/install-OLM/blob/main/README.md#step-3-crd-%EC%A0%9C%EA%B1%B0)
 
 ## Step 1. 사용중인 리소스 제거
 * 목적 : `사용중인 리소스 차례로 제거`
