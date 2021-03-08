@@ -13,7 +13,7 @@
 * kubectl version v1.11.3+.
 * Access to a Kubernetes v1.11.3+ cluster.
 
-## 폐쇄망 설치 가이드
+## 폐쇄망 구축 가이드
 설치를 진행하기 전 아래의 과정을 통해 필요한 이미지 및 yaml 파일을 준비한다.
 1. **폐쇄망에서 설치하는 경우** 사용하는 image repository에 HyperCloud Webhook 설치 시 필요한 이미지를 push한다. 
 
@@ -89,7 +89,7 @@
     ```    
     
 
-## Install Steps
+## 설치 가이드
 0. [olm yaml 수정](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-0-hypercloud-webhook-yaml-%EC%88%98%EC%A0%95)
 1. [crds 생성](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-1-%EC%9D%B8%EC%A6%9D%EC%84%9C-%EC%83%9D%EC%84%B1)
 2. [OLM 설치](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-2-secret-%EC%83%9D%EC%84%B1)
@@ -128,3 +128,30 @@
    ```
   ![image](figure/olm_pods.png)
   ![image](figure/olm_catalogsource.png)
+  
+  
+## 삭제 가이드
+1. [사용중인 리소스 제거](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-0-hypercloud-webhook-yaml-%EC%88%98%EC%A0%95)
+2. [설치 리소스 제거](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-1-%EC%9D%B8%EC%A6%9D%EC%84%9C-%EC%83%9D%EC%84%B1)
+3. [CRD 제거](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-2-secret-%EC%83%9D%EC%84%B1)
+
+## Step 1. 사용중인 리소스 제거
+* 목적 : `사용중인 리소스 차례로 제거`
+* 삭제 순서 : 아래의 command 순서대로 적용
+    ```bash
+    $ kubectl delete subscription --all --all-namespaces
+    $ kubectl delete csv --all --all-namespaces
+    ```
+## Step 2. 설치 제거
+* 목적 : `사용중인 리소스 차례로 제거`
+* 삭제 순서 : 아래의 command로 yaml 적용
+    ```bash
+    $ kubectl delete -f manifest/custom_catalogsource.yaml (* 폐쇄망 구축했을 경우)
+    $ kubectl delete -f manifest/02_olm.yaml
+    ```
+## Step 3. CRD 제거
+* 목적 : `사용중인 리소스 차례로 제거`
+* 삭제 순서 : 아래의 command로 yaml 적용
+    ```bash
+    $ kubectl delete -f manifest/01_crds.yaml
+    ```
