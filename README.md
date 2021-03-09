@@ -90,9 +90,9 @@
     
 
 ## 설치 가이드
-0. [olm yaml 수정](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-0-hypercloud-webhook-yaml-%EC%88%98%EC%A0%95)
-1. [crds 생성](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-1-%EC%9D%B8%EC%A6%9D%EC%84%9C-%EC%83%9D%EC%84%B1)
-2. [OLM 설치](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-2-secret-%EC%83%9D%EC%84%B1)
+0. [olm yaml 수정](https://github.com/tmax-cloud/install-OLM/blob/main/README.md#step-0-olm-yaml-%EC%88%98%EC%A0%95-%EC%88%98%EC%A0%95)
+1. [crds 생성](https://github.com/tmax-cloud/install-OLM/blob/main/README.md#step-1-crds-%EC%83%9D%EC%84%B1)
+2. [OLM 설치](https://github.com/tmax-cloud/install-OLM/blob/main/README.md#step-2-olm-%EC%84%A4%EC%B9%98)
 3. [동작 확인](https://github.com/tmax-cloud/install-OLM/blob/main/README.md#step-3-%EB%8F%99%EC%9E%91-%ED%99%95%EC%9D%B8)
 
 ## Step 0. olm yaml 수정 수정
