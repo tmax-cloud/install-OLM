@@ -135,7 +135,9 @@
 * 순서
   * `kubectl get packagemanifest -A`를 실행하여 OLM에서 관리하는 Operator 목록이 조회되는지 확인한다.
   * `kubectl apply -f 03_sample.yaml`를 실행하여 Operator 설치가 정상적으로 수행되는지 확인한다.
-   
+ 
+  ![image](figure/olm_packagemanifest.png)
+  ![image](figure/olm_sample.png)
   
 ## 삭제 가이드
 1. [사용중인 리소스 제거](https://github.com/tmax-cloud/install-OLM/blob/main/README.md#step-1-%EC%82%AC%EC%9A%A9%EC%A4%91%EC%9D%B8-%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%A0%9C%EA%B1%B0)
