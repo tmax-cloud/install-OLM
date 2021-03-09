@@ -7,7 +7,7 @@ metadata:
     capabilities: Seamless Upgrades
     categories: Application Runtime
     certified: 'false'
-    containerImage: 'lightbend-docker-registry.bintray.io/lightbend/akkacluster-operator:v1.0.0'
+    containerImage: '{registry}/akkacluster-operator:v1.0.0'
     createdAt: '2019-06-28T15:23:00Z'
     description: Run Akka Cluster applications on Kubernetes.
     repository: https://github.com/lightbend/akka-cluster-operator
@@ -27,7 +27,7 @@ metadata:
                 "containers": [
                   {
                     "name": "main",
-                    "image": "192.168.6.100:5000/akka-cluster-demo:1.1.0",
+                    "image": "{registry}/akka-cluster-demo:1.1.0",
                     "readinessProbe": {
                       "httpGet": {
                         "path": "/ready",
@@ -164,7 +164,7 @@ spec:
                             fieldPath: metadata.name
                       - name: OPERATOR_NAME
                         value: akka-cluster-operator
-                    image: 192.168.6.100:5000/akkacluster-operator:v1.0.0
+                    image: {registry}/akkacluster-operator:v1.0.0
                     imagePullPolicy: Always
                     name: akka-cluster-operator
                     resources: {}
