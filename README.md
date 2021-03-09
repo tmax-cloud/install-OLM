@@ -111,7 +111,7 @@
 
 
 ## Step 1. CRDs 생성
-* 목적 : `OLM 설치를 위해 필요한 Custorm Resource를 정의한다.`
+* 목적 : `OLM 설치를 위해 필요한 CRDs를 배포한다.`
 * 생성 순서 : [01_crds.yaml](yaml/01_crds.yaml) 실행 `ex) kubectl apply -f 01_crds.yaml`
 
 
@@ -149,8 +149,8 @@
     $ kubectl delete -f manifest/custom_catalogsource.yaml (* 폐쇄망 구축했을 경우)
     $ kubectl delete -f manifest/02_olm.yaml
     ```
-## Step 3. CRD 제거
-* 목적 : `사용중인 리소스 차례로 제거`
+## Step 3. CRDs 제거
+* 목적 : `OLM 관련 CRDs 제거`
 * 삭제 순서 : 아래의 command로 yaml 적용
     ```bash
     $ kubectl delete -f manifest/01_crds.yaml
