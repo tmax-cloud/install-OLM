@@ -134,7 +134,7 @@
 * 목적 : `OLM이 정상적으로 동작하는지 확인한다.`
 * 순서
   * `kubectl get packagemanifest -A`를 실행하여 OLM에서 관리하는 Operator 목록이 조회되는지 확인한다.
-  * `kubectl apply -f 03_sample.yaml`를 실행하여 Operator 설치가 정상적으로 수행되는지 확인한다. (* 폐쇄망 구축 시, 대신 private 디렉토리에 03_sample.yaml 실행)
+  * `kubectl apply -f 03_sample.yaml`를 실행하여 Operator 설치가 정상적으로 수행되는지 확인한다. (* 폐쇄망 구축 시, 대신 private/03_sample.yaml 실행)
  
   ![image](figure/olm_packagemanifest.png)
   ![image](figure/olm_sample.png)
