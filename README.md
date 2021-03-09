@@ -15,7 +15,7 @@
 
 ## 폐쇄망 구축 가이드
 설치를 진행하기 전 아래의 과정을 통해 필요한 이미지 및 yaml 파일을 준비한다.
-1. **폐쇄망에서 설치하는 경우** 사용하는 image repository에 HyperCloud Webhook 설치 시 필요한 이미지를 push한다. 
+1. **폐쇄망에서 설치하는 경우** 사용하는 image repository에 Operator Lifecycle Manager 설치 시 필요한 이미지를 push한다. 
 
     * 작업 디렉토리 생성 및 환경 설정
     ```bash
@@ -93,6 +93,7 @@
 0. [olm yaml 수정](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-0-hypercloud-webhook-yaml-%EC%88%98%EC%A0%95)
 1. [crds 생성](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-1-%EC%9D%B8%EC%A6%9D%EC%84%9C-%EC%83%9D%EC%84%B1)
 2. [OLM 설치](https://github.com/tmax-cloud/hypercloud-install-guide/tree/master/HyperCloud%20Webhook#step-2-secret-%EC%83%9D%EC%84%B1)
+3. [동작 확인]()
 
 ## Step 0. olm yaml 수정 수정
 * 목적 : `olm yaml에 이미지 버전 정보를 수정`
@@ -111,7 +112,7 @@
 
 
 ## Step 1. CRDs 생성
-* 목적 : `OLM 설치를 위해 필요한 Custorm Resource를 정의한다.`
+* 목적 : `OLM 설치를 위해 필요한 CRDs를 배포한다.`
 * 생성 순서 : [01_crds.yaml](yaml/01_crds.yaml) 실행 `ex) kubectl apply -f 01_crds.yaml`
 
 
@@ -129,6 +130,12 @@
   ![image](figure/olm_pods.png)
   ![image](figure/olm_catalogsource.png)
   
+## Step 3. 동작 확인
+* 목적 : `OLM이 정상적으로 동작하는지 확인한다.`
+* 순서
+  * `kubectl get packagemanifest -A`를 실행하여 OLM에서 관리하는 Operator 목록이 조회되는지 확인한다.
+  * `kubectl apply -f 03_sample.yaml`를 실행하여 Operator 설치가 정상적으로 수행되는지 확인한다.
+   
   
 ## 삭제 가이드
 1. [사용중인 리소스 제거](https://github.com/tmax-cloud/install-OLM/blob/main/README.md#step-1-%EC%82%AC%EC%9A%A9%EC%A4%91%EC%9D%B8-%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%A0%9C%EA%B1%B0)
@@ -149,8 +156,8 @@
     $ kubectl delete -f manifest/custom_catalogsource.yaml (* 폐쇄망 구축했을 경우)
     $ kubectl delete -f manifest/02_olm.yaml
     ```
-## Step 3. CRD 제거
-* 목적 : `사용중인 리소스 차례로 제거`
+## Step 3. CRDs 제거
+* 목적 : `OLM 관련 CRDs 제거`
 * 삭제 순서 : 아래의 command로 yaml 적용
     ```bash
     $ kubectl delete -f manifest/01_crds.yaml
