@@ -113,14 +113,14 @@
 
 ## Step 1. CRDs 생성
 * 목적 : `OLM 설치를 위해 필요한 CRDs를 배포한다.`
-* 생성 순서 : [01_crds.yaml](yaml/01_crds.yaml) 실행 `ex) kubectl apply -f 01_crds.yaml`
+* 생성 순서 : [01_crds.yaml](manifest/01_crds.yaml) 실행 `ex) kubectl apply -f 01_crds.yaml`
 
 
 
 ## Step 2. OLM 설치
 * 목적 : `OLM 동작을 위해 필요한 리소스 (namespace, clusterrole, deployment 등)를 생성한다.`
 * 생성 순서
-  * [02_olm.yaml](yaml/02_olm.yaml) 실행 `ex) kubectl apply -f 02_olm.yaml`
+  * [02_olm.yaml](manifest/02_olm.yaml) 실행 `ex) kubectl apply -f 02_olm.yaml`
   
   * 아래의 명령어를 사용하여 OLM이 정상적으로 설치되었는지 확인한다.
   ```bash
@@ -134,7 +134,7 @@
 * 목적 : `OLM이 정상적으로 동작하는지 확인한다.`
 * 순서
   * `kubectl get packagemanifest -A`를 실행하여 OLM에서 관리하는 Operator 목록이 조회되는지 확인한다.
-  * `kubectl apply -f 03_sample.yaml`를 실행하여 Operator 설치가 정상적으로 수행되는지 확인한다. (* 폐쇄망 구축 시, ../private/03_sample.yaml 실행)
+  * `kubectl apply -f 03_sample.yaml`를 실행하여 Operator 설치가 정상적으로 수행되는지 확인한다. (* 폐쇄망 구축 시, ([../private/03_sample.yaml](private/03_sample.yaml)) 실행)
  
   ![image](figure/olm_packagemanifest.png)
   ![image](figure/olm_sample.png)
