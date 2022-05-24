@@ -1,4 +1,11 @@
 # Operator Lifecycle Manager 설치 가이드
+This project is a component of the Operator Framework, an open source toolkit to manage Kubernetes native applications, called Operators, in an effective, automated, and scalable way. Read more in the introduction blog post and learn about practical use cases at the OLM website.
+
+OLM extends Kubernetes to provide a declarative way to install, manage, and upgrade Operators and their dependencies in a cluster.
+
+## 개요
+설치 목적: Kubernetes Cluster 내 Operator Lifecycle을 관리하기 위함
+모듈 역할: Operator 설치, 삭제, 업데이트 등 생애주기 (Lifecycle) 관리
 
 ## 구성 요소 및 버전
 * OLM: ([quay.io/operator-framework/olm:0.15.1](https://quay.io/repository/operator-framework/olm/manifest/sha256:2c389d2e380c842cbf542820ad4493249164302ddf0e699b0a37105d234e67ee))
